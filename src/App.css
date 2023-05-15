@@ -1,38 +1,195 @@
+@import url('https://fonts.cdnfonts.com/css/boba-milky');
+@import url('https://fonts.cdnfonts.com/css/indie-flower');
+
+* {
+  /* font-family: 'Outfit', sans-serif; */
+  box-sizing: border-box;
+  overflow: auto;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #5ae4b8;
+  height: 100vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+.start-image {
+  /* width: 100%;
+  height: 100vh;
+  background-image: url('./components/images/abstract-textured-backgound.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  background-color: #63d9d9;
+  height: 100vh;
+
+  /* background: #35e9d6;
+  background: linear-gradient(45deg, #35e9d6, #3c87a8); */
+}
+#title {
+  overflow: hidden;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: aliceblue;
+  font-family: 'Boba Milky', sans-serif;
+}
+#motto {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: aliceblue;
+  font-family: 'Boba Milky', sans-serif;
+}
+.v1 {
+  height: 70%;
+  width: 50%;
+}
+#paper1 {
+  width: 50%;
+  height: 400px;
+  margin-left: auto;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
 }
 
-.App-link {
-  color: #61dafb;
+#paper2 {
+  margin: 0px;
+
+  width: 50%;
+  height: 400px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#paper1::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+#paper1 {
+  position: relative;
+}
+#paper1::before {
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+#paper1 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#paper2::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+#paper2 {
+  position: relative;
+}
+#paper2::before {
+  position: absolute;
+  top: 0;
+  left: 40px;
+}
+#paper2 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+#pattern {
+  overflow: auto;
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+#content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: 'Indie Flower', sans-serif;
+  color: grey;
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
+
+.image-pen-1 {
+  width: 70%;
+  height: 100%;
+  background-image: url('./components/images/pen1.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 150%;
+}
+
+.image-pen-2 {
+  width: 90%;
+  height: 100%;
+  background-image: url('./components/images/pen2.png');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 150%;
+}
+.title {
+  font-size: 22px;
+  color: black;
+}
+.pin-image-right {
+  width: 20%;
+  height: 90%;
+  top: -22%;
+  left: 1080px;
+  position: absolute;
+  background-image: url('./components/images/pin.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20%;
+}
+.pin-image-left {
+  width: 20%;
+  height: 90%;
+  top: -22%;
+  left: 207px;
+  background-image: url('./components/images/pin.png');
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 20%;
+}
+#title-lists {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: red;
+  font-family: 'Boba Milky', sans-serif;
+  margin: 0px;
+  font-size: 16px;
+}
+.hidden-xs {
+  overflow: hidden;
+}
+@media only screen and (max-width: 900px) {
+  .image-container {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .image-pen-1,
+  .image-pen-2 {
+    display: block;
+  }
+  #paper1 {
+    margin-left: 0%;
+    margin: auto;
+  }
+  #paper2 {
+    margin: auto;
   }
 }

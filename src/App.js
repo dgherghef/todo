@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import PulseLoader from 'react-spinners/PulseLoader';
+
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Start from './components/Start';
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className='start-image'>
+      {loading ? (
+        <div
+          style={{
+            height: '100vh',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+            display: 'flex',
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <PulseLoader color={'white'} loading={loading} size={10} />
+        </div>
+      ) : (
+        <Router>
+          <Routes>
+            <Route path='/' exact element={<Start />} />
+          </Routes>
+        </Router>
+      )}
     </div>
   );
 }
